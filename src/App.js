@@ -1,7 +1,8 @@
-import './App.css';
-import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import Other from './Other'
-import Home from './Home'
+import { Link, Route, Switch } from 'react-router-dom';
+import Search from "./components/Search/Search";
+import RecipePage from './components/RecipePage/RecipePage';
+import GroceryList from "./components/GroceryList/GroceryList";
+import InPantry from "./components/InPantry/InPantry";
 
 // Save the Component, key and path in an array of objects for each Route
 // You could write all routes by hand but I'm lazy annd this lets me use
@@ -9,40 +10,31 @@ import Home from './Home'
 // SWITCH is used so that it only ever matches one route at a time
 // If you don't want to use react router just rewrite the app component to not use it
 
-const routes = [
-  {
-    Component: Other,
-    key: 'Other',
-    path: '/other'
-  },
-  {
-    Component: Other,
-    key: 'Another',
-    path: '/another'
-  },
-  {
-    Component: Home,
-    key: 'Home',
-    path: '/'
-  }
-]
+function App({recipeData}) {
 
-export default function App () {
   return (
-    <Router>
+    <div className="App">
       <nav>
-        {routes.map(route => <Link key={route.key} to={route.path}>{route.key}</Link>)}
+        <Link to="/">Search Recipes</Link>
+        <Link to="/InPantry">In Your Pantry</Link>
+        <Link to="/GroceryList">Grocery List</Link>
       </nav>
-      <Switch>
-        {
-          routes.map(({key, Component, path}) => (
-            <Route
-              key={key}
-              path={path}
-              component={props => <Component {...props} page={key} />}
-              />))
-        }
-      </Switch>
-    </Router>
-  )
+      <main>
+        <Switch>
+          <Route path="/" exact render={() => <Search recipeData={Search.recipeData} />} />
+          <Route path="/InPantry" component={InPantry} />
+          <Route path="/GroceryList" component={GroceryList} />
+          <Route path="/Recipe:id" render={routerProps => {
+            const recipes = [...recipeData].filter(
+              (p) => p.id === routerProps.match.params.id
+            );
+            return <RecipePage {...routerProps} recipes={recipes[0]} />
+          }} />
+          console.log(recipe);
+        </Switch>
+        
+      </main>
+    </div>
+  );
 }
+export default App;
