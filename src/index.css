@@ -2,28 +2,78 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-size: 14pt;
+  font-size: 10pt;
   width: 100vw;
   height: 100vh;
 }
-​
-nav {
-  background: black;
-  color: white;
+
+
+.homeNav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  background: black;
+  color: blue;
+  height: 5rem;
+  width: 100%;
 }
 
-/* nav {
-  width: 100vw;
-  background-color: aqua;
-} */
+.homeNav > div {
+  background: black;
+  padding: 1rem;
+}
 
-nav > ul {
-  width: 100%;
-  list-style: none;
+.homeNav > div:hover {
+  background: rgb(151, 14, 14);
+}
+
+.siteName {
+  color: ghostwhite;
+  font-size: 2rem;
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+
+.main-container {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+
+.recipe-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  justify-content: center;
+}
+
+.header-container {
+  display: flexbox;
+  width: 100vw;
+  position: relative;
+  left: 0;
+  top: 0;
+  margin-left: 2rem;
+  margin-bottom: 3rem;
+}
+
+.item-container {
+ width: 300px;
+ text-decoration: none;
+ margin: 0px 2rem;
+}
+
+.item-image {
+width: 300px;
+border-radius: 10px;
+/* border: 3px solid black; */
+}
+
+.recipe-title {
+  width: 300px;
+  text-align: center;
+  color: black;
+}
+.item-main-div {
+  display: flex;
+  justify-content: center;
 }

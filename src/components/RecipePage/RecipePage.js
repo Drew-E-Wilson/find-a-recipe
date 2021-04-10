@@ -20,7 +20,7 @@ export default function RecipePage(props) {
     <div className="recipePage">
       <h1>{oneRecipe.title}</h1>
       <img src={oneRecipe.image} alt={oneRecipe.title} width="200px" />
-      <p>{oneRecipe.summary}</p>
+      <p dangerouslySetInnerHTML={{__html: oneRecipe.summary}}></p>
     </div>
   );
 };
