@@ -16,11 +16,32 @@ export default function RecipePage(props) {
     getRecipe();
   }, []);
 
+  const isVegan = () => {
+    if (oneRecipe.vegan === true ) {
+      <h4>Vegan: True</h4>
+    } 
+  }
+
+  const isVegetarian = () => {
+    if (oneRecipe.vegetarian === true ) {
+      <h4>Vegetarian: True</h4>
+    }
+  }
+
+  const mapStep = oneRecipe.analyzedInstructions[0].steps[0].step;
+  // const mapSteps = mapStep.steps
+  console.log(mapStep)
+
   return (
     <div className="recipePage">
       <h1>{oneRecipe.title}</h1>
+      {isVegan()}
+      {isVegetarian()}
       <img src={oneRecipe.image} alt={oneRecipe.title} width="200px" />
       <p dangerouslySetInnerHTML={{__html: oneRecipe.summary}}></p>
+      {/* {mapSteps.map((step)=> {
+        <p>{step.step}</p>
+      })} */}
     </div>
   );
 };
