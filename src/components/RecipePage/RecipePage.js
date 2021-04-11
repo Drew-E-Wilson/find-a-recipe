@@ -28,9 +28,9 @@ export default function RecipePage(props) {
     }
   }
 
-  const mapStep = oneRecipe.analyzedInstructions[0].steps[0].step;
+  // const mapStep = oneRecipe.analyzedInstructions[0].steps[0].step;
   // const mapSteps = mapStep.steps
-  console.log(mapStep)
+  // console.log(mapStep)
 
   return (
     <div className="recipePage">
