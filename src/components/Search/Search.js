@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import SearchHeader from "../SearchHeader/SearchHeader";
 import SearchForm from "../SearchForm/SearchForm";
-import { GridWrapper } from '../../index.css';
 
 function Search({lastSearch, recipeData, handleChange, handleSubmit, searchString}) {
 
@@ -27,6 +26,7 @@ function Search({lastSearch, recipeData, handleChange, handleSubmit, searchStrin
                             </div>
                     )
             })}
+            <footer>Made by: Drew Wilson, *Copyright 2021*</footer>
         </div>
     )
 }

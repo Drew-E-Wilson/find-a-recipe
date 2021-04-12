@@ -54,7 +54,7 @@ function App() {
     <div className="App">
       <nav className="homeNav">
         <div>
-          <Link className="siteName" to="/">Find A Recipe</Link>
+          <Link className="siteName" to="/">Find-A-Recipe</Link>
         </div>
         {/* <Link to="/InPantry">In Your Pantry</Link>
         <Link to="/GroceryList">Grocery List</Link> */}

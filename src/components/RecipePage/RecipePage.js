@@ -4,7 +4,7 @@ export default function RecipePage(props) {
   const [oneRecipe, setOneRecipe] = useState([]);
   const getRecipe = async () => {
     try {
-      const res = await fetch(`https://api.spoonacular.com/recipes/${props.match.params.RecipePageId}/information?&apiKey=${process.env.REACT_APP_API_KEY}`);
+      const res = await fetch(`https://api.spoonacular.com/recipes/${props.match.params.RecipePageId}/information?&parseIngredients&apiKey=${process.env.REACT_APP_API_KEY}`);
       const data = await res.json();
       setOneRecipe(data)
       console.log(JSON.stringify(data, null, 4));
@@ -16,32 +16,44 @@ export default function RecipePage(props) {
     getRecipe();
   }, []);
 
-  const isVegan = () => {
-    if (oneRecipe.vegan === true ) {
-      <h4>Vegan: True</h4>
-    } 
-  }
+  if (props === undefined) {
+    return <h1>loading ...</h1>
+}
 
-  const isVegetarian = () => {
-    if (oneRecipe.vegetarian === true ) {
-      <h4>Vegetarian: True</h4>
-    }
-  }
-
-  // const mapStep = oneRecipe.analyzedInstructions[0].steps[0].step;
-  // const mapSteps = mapStep.steps
-  // console.log(mapStep)
+  // if (oneRecipe.vegetarian === true) {
+  //   style={color: "green"}
+  // } else {
+  //   style={color: "red"}
+  // }
 
   return (
     <div className="recipePage">
-      <h1>{oneRecipe.title}</h1>
-      {isVegan()}
-      {isVegetarian()}
-      <img src={oneRecipe.image} alt={oneRecipe.title} width="200px" />
-      <p dangerouslySetInnerHTML={{__html: oneRecipe.summary}}></p>
-      {/* {mapSteps.map((step)=> {
-        <p>{step.step}</p>
-      })} */}
+      <div className="main-title">
+        <h1>{oneRecipe.title}</h1>
+      </div>
+      <div className="recipe-pic">
+        <img src={oneRecipe.image} alt={oneRecipe.title} />
+      </div>
+      <div className="health-options">
+        <p>Vegetarian: {`${oneRecipe.vegetarian}`}</p>
+        <p>Vegan: {`${oneRecipe.vegan}`}</p>
+        <p>Gluten Free: {`${oneRecipe.glutenFree}`}</p>
+        <p>Dairy Free: {`${oneRecipe.dairyFree}`}</p>
+      </div>
+      <div className="intro">
+        <h3>Intro:</h3>
+        <p dangerouslySetInnerHTML={{__html: oneRecipe.summary}}></p>
+      </div>
+      <div>
+        <h3>Ingredients:</h3>
+        <ol>
+          <li>a</li>
+        </ol>
+      </div>
+      <div className="instructions">
+        <h3>Instructions:</h3>
+        <p dangerouslySetInnerHTML={{__html: oneRecipe.instructions}}></p>
+      </div>
     </div>
   );
 };
