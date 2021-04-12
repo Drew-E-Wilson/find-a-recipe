@@ -198,3 +198,12 @@ footer {
   margin-bottom: 3rem;
   font-family: 'Acme', sans-serif;
 }
+
+.ingredients-list {
+  padding: 1.5rem;
+  box-shadow: 0px 0px 20px rgb(149, 159, 194);
+  border-radius: 7px;
+  width: 70vw;
+  font-size: 1.2rem;
+  margin: auto;
+}

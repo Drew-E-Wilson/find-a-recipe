@@ -16,10 +16,30 @@ export default function RecipePage(props) {
     getRecipe();
   }, []);
 
-  if (props === undefined) {
-    return <h1>loading ...</h1>
-}
 
+  if (oneRecipe === undefined) {
+    return <h1>loading ...</h1>
+  } else if (oneRecipe.extendedIngredients === undefined) {
+    return <h1>loading ...</h1>
+  } else if (oneRecipe.extendedIngredients[0] === undefined) {
+    return <h1>loading ...</h1>
+  } else if (oneRecipe.extendedIngredients[0].name === undefined) {
+    return <h1>loading ...</h1>
+  } else if (oneRecipe.extendedIngredients[0].amount === undefined) {
+    return <h1>loading ...</h1>
+  } else if (oneRecipe.extendedIngredients[0].unit === undefined) {
+    return <h1>loading ...</h1>
+  }
+
+  const extend = oneRecipe.extendedIngredients;
+  const recipeItems = () => {
+    extend.map((item) => {
+      return (
+            <p>{item.name}: {item.amount} {item.unit}</p>
+      )
+    })}
+    console.log(extend);
+    console.log(recipeItems([0]));
   // if (oneRecipe.vegetarian === true) {
   //   style={color: "green"}
   // } else {
@@ -46,9 +66,12 @@ export default function RecipePage(props) {
       </div>
       <div>
         <h3>Ingredients:</h3>
-        <ol>
-          <li>a</li>
-        </ol>
+          <div className="ingredients-list">
+            <ul>
+              {recipeItems()}
+              {/* <li>{oneRecipe.extendedIngredients[0].name}: {oneRecipe.extendedIngredients[0].amount} {oneRecipe.extendedIngredients[0].unit}</li> */}
+            </ul>
+          </div>
       </div>
       <div className="instructions">
         <h3>Instructions:</h3>
@@ -57,3 +80,12 @@ export default function RecipePage(props) {
     </div>
   );
 };
+
+
+// {oneRecipe.extendedIngredients[0].map((item) => {
+//   return (
+//       <div>
+//         <p>{item.name}: {item.amount} {item.unit}</p>
+//       </div>
+//   )
+// })}
