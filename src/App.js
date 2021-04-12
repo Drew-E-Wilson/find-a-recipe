@@ -5,12 +5,6 @@ import GroceryList from "./components/GroceryList/GroceryList";
 import InPantry from "./components/InPantry/InPantry";
 import {useState, useEffect} from "react";
 
-// Save the Component, key and path in an array of objects for each Route
-// You could write all routes by hand but I'm lazy annd this lets me use
-// the map method to just loop over them and make my routes
-// SWITCH is used so that it only ever matches one route at a time
-// If you don't want to use react router just rewrite the app component to not use it
-
 function App() {
   
   const [recipeData, setRecipeData] = useState([]);

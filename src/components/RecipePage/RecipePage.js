@@ -31,15 +31,16 @@ export default function RecipePage(props) {
     return <h1>loading ...</h1>
   }
 
-  const extend = oneRecipe.extendedIngredients;
-  const recipeItems = () => {
-    extend.map((item) => {
-      return (
-            <p>{item.name}: {item.amount} {item.unit}</p>
-      )
-    })}
-    console.log(extend);
-    console.log(recipeItems([0]));
+  // const extend = oneRecipe.extendedIngredients;
+  // const recipeItems = () => {
+  //   extend.map((item) => {
+  //     return (
+  //           <p>{item.name}: {item.amount} {item.unit}</p>
+  //     )
+  //   })}
+  //   console.log(extend);
+  //   console.log(recipeItems([0]));
+
   // if (oneRecipe.vegetarian === true) {
   //   style={color: "green"}
   // } else {
@@ -68,7 +69,7 @@ export default function RecipePage(props) {
         <h3>Ingredients:</h3>
           <div className="ingredients-list">
             <ul>
-              {recipeItems()}
+              {/* {recipeItems()} */}
               {/* <li>{oneRecipe.extendedIngredients[0].name}: {oneRecipe.extendedIngredients[0].amount} {oneRecipe.extendedIngredients[0].unit}</li> */}
             </ul>
           </div>
@@ -80,12 +81,3 @@ export default function RecipePage(props) {
     </div>
   );
 };
-
-
-// {oneRecipe.extendedIngredients[0].map((item) => {
-//   return (
-//       <div>
-//         <p>{item.name}: {item.amount} {item.unit}</p>
-//       </div>
-//   )
-// })}
