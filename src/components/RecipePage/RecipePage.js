@@ -65,9 +65,9 @@ export default function RecipePage(props) {
         <h3>Intro:</h3>
         <p dangerouslySetInnerHTML={{__html: oneRecipe.summary}}></p>
       </div>
-      <div>
+      <div className="ingredients-list">
         <h3>Ingredients:</h3>
-          <div className="ingredients-list">
+          <div>
             <ul>
               {/* {recipeItems()} */}
               {/* <li>{oneRecipe.extendedIngredients[0].name}: {oneRecipe.extendedIngredients[0].amount} {oneRecipe.extendedIngredients[0].unit}</li> */}

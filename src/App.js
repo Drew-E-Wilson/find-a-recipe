@@ -15,7 +15,7 @@ function App() {
     try {
       const res = await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${searchString}&apiKey=${process.env.REACT_APP_API_KEY}&number=18`);
       const data = await res.json();
-      console.log(JSON.stringify(data.results, null, 4));
+      // console.log(JSON.stringify(data.results, null, 4));
       setRecipeData(data.results);
       setLastSearch(searchString);
       setSearchString("");

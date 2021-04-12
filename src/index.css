@@ -8,14 +8,14 @@ body {
   font-size: 10pt;
   width: 100vw;
   height: 100vh;
- background: rgb(217, 225, 248);
+ background: rgb(227, 233, 249);
  font-family: 'Kiwi Maru', serif;
 }
 
 .homeNav {
   display: flex;
   align-items: center;
-  background-image: linear-gradient(to right,rgb(22, 69, 224), rgb(72, 104, 200));
+  background-image: linear-gradient(to right,rgb(21, 66, 211), rgb(90, 117, 201));
   height: 5rem;
   width: 100%;
   border-bottom: 3px solid black;
@@ -73,6 +73,7 @@ body {
 .item-image {
 width: 300px;
 border-radius: 10px;
+box-shadow: 0px 0px 12px rgb(93, 99, 121);
 }
 
 .item-image:hover {
@@ -206,4 +207,5 @@ footer {
   width: 70vw;
   font-size: 1.2rem;
   margin: auto;
+  margin-bottom: 3rem;
 }
