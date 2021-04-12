@@ -1,4 +1,4 @@
-#Find-A-Recipe
+# Find-A-Recipe
 
 ## `Description:`
 
@@ -12,6 +12,7 @@ This is a recipe website that allows users to easily find recipes through a sear
 - JavaScript
 - HTML
 - CSS
+    - flexbox
 - API
 ```
 <img src="src/components/Pictures/Find-A-Recipe-Pic.png"/>
