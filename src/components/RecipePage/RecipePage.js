@@ -31,7 +31,7 @@ export default function RecipePage(props) {
     return <h1>loading ...</h1>
   }
 
-  // const extend = oneRecipe.extendedIngredients;
+  const extend = [oneRecipe.extendedIngredients];
   // const recipeItems = () => {
   //   extend.map((item) => {
   //     return (
@@ -70,6 +70,17 @@ export default function RecipePage(props) {
           <div>
             <ul>
               {/* {recipeItems()} */}
+              {extend.map((data) => {
+                console.log(data)
+                return data.map((info) => {
+                  console.log(info)
+                  return (
+                    <li>
+                      {info.name}: {info.amount} {info.unit}
+                    </li>
+                  )
+                })
+              })}
               {/* <li>{oneRecipe.extendedIngredients[0].name}: {oneRecipe.extendedIngredients[0].amount} {oneRecipe.extendedIngredients[0].unit}</li> */}
             </ul>
           </div>
