@@ -28,7 +28,7 @@ Feel free to fork this repo, edit, change it and make it your own! OR if you fin
 
 ### `Stretch Goals:`
 
-- [ ] Fix ingridients list
+- [x] Fix ingridients list
 - [ ] Get Cooking Instructions in ordered list format
 - [ ] Create a Grocery List Page
 - [ ] Search Recipes by ingredients list
